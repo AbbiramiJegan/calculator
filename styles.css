@@ -56,3 +56,12 @@ body {
     word-wrap: break-word;
 }
 
+.output .previous-operand{
+    color:rgb(34, 1, 1);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color:rgb(0, 0, 0);
+    font-size: 1.5rem;
+}
