@@ -59,9 +59,11 @@ body {
 .output .previous-operand{
     color:rgb(34, 1, 1);
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .output .current-operand{
     color:rgb(0, 0, 0);
     font-size: 1.5rem;
+    font-weight: 900;
 }

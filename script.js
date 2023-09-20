@@ -18,7 +18,9 @@ class Calculator{
     }
 
     appendNumber(number){
-
+        if (number === '.' && this.currentOperand.includes('.')) return
+        // Changing to string so they get appended and not added
+        this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
     chooseOperation(operation){
