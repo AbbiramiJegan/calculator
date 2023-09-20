@@ -1,32 +1,32 @@
 /* To store all the information of my calculator I create a class */
-class Calculator{
+class Calculator {
     // Takes all the inputs and functions of my calculator
-    constructor(previousOperandTextElement, currentOperandTextElement){
+    constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement
         this.currentOperandTextElement = currentOperandTextElement
         this.clear() // as soon as we create new calculator it gets set to its default values
     }
 
-    clear(){
+    clear() {
         this.currentOperand = ''
         this.previousOperand = ''
         this.operation = undefined
     }
 
-    delete(){
+    delete() {
 
     }
 
-    appendNumber(number){
+    appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return
         // Changing to string so they get appended and not added
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
-    chooseOperation(operation){
+    chooseOperation(operation) {
         // if current operand is empty it just returns so you don't execute any further into your code
-        if(this.currentOperand === '') return
-        if(this.previousOperand !== ''){
+        if (this.currentOperand === '') return
+        if (this.previousOperand !== '') {
             this.compute
         }
         this.operation = operation
@@ -34,11 +34,33 @@ class Calculator{
         this.currentOperand = ''
     }
 
-    compute(){
-
+    compute() {
+        let computation
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        if (isNaN(prev) || isNaN(current)) return
+        switch (this.operation) {
+            case '+':
+                computation = prev + current
+                break
+            case '-':
+                computation = prev - current
+                break
+            case '*':
+                computation = prev * current
+                break
+            case '÷':
+                computation = prev / current
+                break
+            default:
+                return
+        }
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOperand = ''
     }
 
-    updateDisplay(){
+    updateDisplay() {
         this.currentOperandTextElement.innerText = this.currentOperand
         this.previousOperandTextElement.innerText = this.previousOperand
     }
@@ -68,4 +90,9 @@ operationButtons.forEach(button => {
         calculator.chooseOperation(button.innerText)
         calculator.updateDisplay()
     })
+})
+
+equalsButton.addEventListener('click', button => {
+    calculator.compute()
+    calculator.updateDisplay()
 })
