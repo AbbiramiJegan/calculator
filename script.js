@@ -6,7 +6,7 @@ class Calculator{
         this.currentOperandTextElement = currentOperandTextElement
         this.clear() // as soon as we create new calculator it gets set to its default values
     }
-    
+
     clear(){
         this.currentOperand = ''
         this.previousOperand = ''
@@ -30,7 +30,7 @@ class Calculator{
     }
 
     updateDisplay(){
-
+        this.currentOperandTextElement.innerText = this.currentOperand
     }
 }
 /* We have everything selected now */
@@ -42,3 +42,13 @@ const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
+
+// Calculator object
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
+})
