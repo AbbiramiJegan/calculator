@@ -24,7 +24,14 @@ class Calculator{
     }
 
     chooseOperation(operation){
-
+        // if current operand is empty it just returns so you don't execute any further into your code
+        if(this.currentOperand === '') return
+        if(this.previousOperand !== ''){
+            this.compute
+        }
+        this.operation = operation
+        this.previousOperand = this.currentOperand
+        this.currentOperand = ''
     }
 
     compute(){
@@ -33,6 +40,7 @@ class Calculator{
 
     updateDisplay(){
         this.currentOperandTextElement.innerText = this.currentOperand
+        this.previousOperandTextElement.innerText = this.previousOperand
     }
 }
 /* We have everything selected now */
@@ -51,6 +59,13 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
         calculator.updateDisplay()
     })
 })
