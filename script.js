@@ -60,10 +60,18 @@ class Calculator {
         this.previousOperand = ''
     }
 
+    getDisplayNumber(number) {
+        const floatNumber = parseFloat(number)
+        if(isNan(floatNumber)) return ''
+        return floatNumber.toLocaleString('en')
+    }
+
     updateDisplay() {
-        this.currentOperandTextElement.innerText = this.currentOperand
-        if(this.operand != null){
-            this.previousOperandTextElement.innerText = '${this.previousOperand} ${this.operation}'
+        this.currentOperandTextElement.innerText =
+            this.getDisplayNumber(this.currentOperand)
+        if (this.operand != null) {
+            this.previousOperandTextElement.innerText =
+                '${this.getDisplayNumber(this.previousOperand)} ${this.operation}'
         }
     }
 }
