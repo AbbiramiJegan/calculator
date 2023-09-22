@@ -2,68 +2,69 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
-    font-weight: normal;
+    box-sizing: border-box; /* Ensures that padding and border are included in element size */
+    font-family: Gotham Rounded, sans-serif; /* Sets the font for all elements */
+    font-weight: normal; /* Sets the font weight to normal for all elements */
 }
 
 /* Styling the background */
 body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(to right, #0922b1, #000000);
+    background: linear-gradient(to right, #0922b1, #000000); /* Applies a linear gradient background */
 }
 
 /* Styling the calculator grid */
 .calculator-grid {
-    display: grid;
-    justify-content: center;
-    /*align-items: center;*/
-    align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    display: grid; /* Uses CSS Grid for layout */
+    justify-content: center; /* Horizontally centers the grid within the viewport */
+    align-content: center; /* Vertically centers the grid within the viewport */
+    min-height: 100vh; /* Sets the minimum height of the grid to 100% of the viewport height */
+    grid-template-columns: repeat(4, 100px); /* Defines 4 columns each with a width of 100px */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* Defines rows with specific height and repeating rows with 100px height */
 }
 
 /* Styling Buttons */
-.calculator-grid > button{
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background-color: rgba(255, 255, 255, .75);
+.calculator-grid > button {
+    cursor: pointer; /* Changes cursor to a pointer on hover, indicating interactivity */
+    font-size: 2rem; /* Sets the font size for buttons */
+    border: 1px solid white; /* Adds a white border to buttons */
+    outline: none; /* Removes default button focus outline */
+    background-color: rgba(255, 255, 255, .75); /* Sets a semi-transparent white background color */
 }
 
-/* Cursor behaviour */
-.calculator-grid > button:hover{
-    background-color: rgba(255, 255, 255, .9);
+/* Cursor behavior on button hover */
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9); /* Lightens the background color on hover */
 }
 
 /* Spanning the AC and = button to two columns as per the index.html */
-.span-two{
-    grid-column: span 2;
+.span-two {
+    grid-column: span 2; /* Spans two grid columns */
 }
 
-/* Styling my output element as a whole */
-.output{
-    grid-column: 1 / -1;
-    background-color: rgba(188, 221, 239, 0.75);
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    flex-direction: column;
-    padding: 10px;
-    word-wrap: break-word;
+/* Styling the output element as a whole */
+.output {
+    grid-column: 1 / -1; /* Spans across all columns in the grid */
+    background-color: rgba(188, 221, 239, 0.75); /* Sets a semi-transparent background color */
+    display: flex; /* Uses flexbox for layout within the output container */
+    align-items: flex-end; /* Aligns items to the bottom within the flex container */
+    justify-content: space-around; /* Distributes space evenly between flex items */
+    flex-direction: column; /* Stacks flex items vertically */
+    padding: 10px; /* Adds padding around the output container */
+    word-wrap: break-word; /* Allows text to wrap to the next line if it overflows the container */
 }
 
-.output .previous-operand{
-    color:rgb(34, 1, 1);
-    font-size: 1.5rem;
-    font-weight: 600;
+/* Styling the previous operand element within the output */
+.output .previous-operand {
+    color: rgb(34, 1, 1); /* Sets text color for the previous operand */
+    font-size: 1.5rem; /* Sets the font size for the previous operand */
+    font-weight: 600; /* Sets the font weight to bold for the previous operand */
 }
 
-.output .current-operand{
-    color:rgb(0, 0, 0);
-    font-size: 1.5rem;
-    font-weight: 900;
+/* Styling the current operand element within the output */
+.output .current-operand {
+    color: rgb(0, 0, 0); /* Sets text color for the current operand */
+    font-size: 1.5rem; /* Sets the font size for the current operand */
+    font-weight: 900; /* Sets the font weight to extra bold for the current operand */
 }
