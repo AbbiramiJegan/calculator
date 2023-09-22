@@ -1,45 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- This declares the document type as HTML -->
+<html lang="en"> <!-- The opening tag for the HTML document, specifying the language as English -->
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document as UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculator</title>
-    <link href="styles.css" rel="stylesheet">
+    <!-- Sets the viewport for responsive design -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Ensures compatibility with Internet Explorer -->
+    <title>Calculator</title> <!-- Sets the title of the webpage -->
+    <link href="styles.css" rel="stylesheet"> <!-- Links an external CSS file named "styles.css" -->
     <script src="script.js" defer></script>
+    <!-- Links an external JavaScript file named "script.js" with the "defer" attribute -->
 </head>
 
 <body>
-    <div class="calculator-grid">
+    <div class="calculator-grid"> <!-- Main container for the calculator -->
         <div class="output">
             <div data-previous-operand class="previous-operand">
+                <!-- Placeholder for displaying the previous operand or result -->
             </div>
             <div data-current-operand class="current-operand">
+                <!-- Placeholder for displaying the current operand or input -->
             </div>
         </div>
-        <button data-all-clear class="span-two">AC</button>
-        <button data-delete>DEL</button>
-        <button data-operation>÷</button>
-        <button data-operation>1/x</button>
-        <button data-operation>x²</button>
-        <button data-operation>√x</button>
-        <button data-operation>%</button>
-        <button data-number>1</button>
-        <button data-number>2</button>
-        <button data-number>3</button>
-        <button data-operation>*</button>
-        <button data-number>4</button>
-        <button data-number>5</button>
-        <button data-number>6</button>
-        <button data-operation>+</button>
-        <button data-number>7</button>
-        <button data-number>8</button>
-        <button data-number>9</button>
-        <button data-operation>-</button>
-        <button data-number>.</button>
-        <button data-number>0</button>
-        <button data-equals class="span-two">=</button>
+        <button data-all-clear class="span-two">AC</button> <!-- Button to clear the calculator (spans two columns) -->
+        <button data-delete>DEL</button> <!-- Button to delete the last input character -->
+        <button data-operation>÷</button> <!-- Button for division operation -->
+        <button data-operation>1/x</button> <!-- Button for reciprocal operation -->
+        <button data-operation>x²</button> <!-- Button for squaring operation -->
+        <button data-operation>√x</button> <!-- Button for square root operation -->
+        <button data-operation>%</button> <!-- Button for percentage operation -->
+        <button data-number>1</button> <!-- Button for digit 1 -->
+        <button data-number>2</button> <!-- Button for digit 2 -->
+        <button data-number>3</button> <!-- Button for digit 3 -->
+        <button data-operation>*</button> <!-- Button for multiplication operation -->
+        <button data-number>4</button> <!-- Button for digit 4 -->
+        <button data-number>5</button> <!-- Button for digit 5 -->
+        <button data-number>6</button> <!-- Button for digit 6 -->
+        <button data-operation>+</button> <!-- Button for addition operation -->
+        <button data-number>7</button> <!-- Button for digit 7 -->
+        <button data-number>8</button> <!-- Button for digit 8 -->
+        <button data-number>9</button> <!-- Button for digit 9 -->
+        <button data-operation>-</button> <!-- Button for subtraction operation -->
+        <button data-number>.</button> <!-- Button for decimal point -->
+        <button data-number>0</button> <!-- Button for digit 0 -->
+        <button data-equals class="span-two">=</button> <!-- Button to calculate the result (spans two columns) -->
     </div>
 </body>
 
